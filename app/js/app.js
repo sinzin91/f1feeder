@@ -10,3 +10,7 @@ angular.module('myApp', [
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
+
+angular.module('F1FeederApp', [
+	'F1FeederApp.controllers'
+]);
