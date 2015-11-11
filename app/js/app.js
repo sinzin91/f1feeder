@@ -1,16 +1,11 @@
-'use strict';
-
-// Declare app level module which depends on views, and components
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
+angular.module('F1FeederApp', [
+  'F1FeederApp.services',
+  'F1FeederApp.controllers',
+  'ngRoute'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.
+	when("/drivers", {templateUrl: "partials/drivers.html", controller: "driversController"}).
+	when("/drivers/:id", {templateUrl: "partials/driver.html", controller: "driverController"}).
+	otherwise({redirectTo: '/drivers'});
 }]);
-
-angular.module('F1FeederApp', [
-	'F1FeederApp.controllers'
-]);
